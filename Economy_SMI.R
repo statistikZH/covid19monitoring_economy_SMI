@@ -48,6 +48,6 @@ smi<-subset(smi, date > "2019-01-01")
 ################################
 
 # export result
-write.table(smi, "./Economy_SMI.csv", sep=",", fileEncoding="UTF-8", row.names = F)
+write.table(smi, "economy_SMI.csv", sep=",", fileEncoding="UTF-8", row.names = F)
 
 
