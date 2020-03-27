@@ -20,7 +20,7 @@ pp<-data.frame(tidyquant::tq_get(c("^SSMI", "CHFEUR=X", "CHFUSD=X"), get = "stoc
 # Format data according to data structure specification
 smi_index<-with(subset(pp, symbol=="^SSMI"), data.frame(
                 date=as.POSIXct(paste(date, "00:00:00", sep=" ")), 
-                value=close, 
+                value=round(close, 2), 
                 topic="Wirtschaft", 
                 variable_short="smi_index",
                 variable_long="Indexwert SMI",
@@ -47,7 +47,7 @@ smi_volume<-with(subset(pp, symbol=="^SSMI"), data.frame(
 
 chf_eur<-with(subset(pp, symbol=="CHFEUR=X"), data.frame(
   date=as.POSIXct(paste(date, "00:00:00", sep=" ")), 
-  value=close,
+  value=round(close, 3),
   topic="Wirtschaft", 
   variable_short="chf_eur",
   variable_long="Wechselkurs Fr./Euro",
@@ -60,7 +60,7 @@ chf_eur<-with(subset(pp, symbol=="CHFEUR=X"), data.frame(
 
 chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   date=as.POSIXct(paste(date, "00:00:00", sep=" ")), 
-  value=close,
+  value=round(close,3),
   topic="Wirtschaft", 
   variable_short="chf_usd",
   variable_long="Wechselkurs Fr./US-Dollar",
@@ -71,12 +71,8 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
-all<-rbind(smi_volume, smi_index, chf_eur, chf_usd)
-all<-subset(all, date > "2019-01-01")
-
-
-
-
+all<-rbind(smi_index, chf_eur, chf_usd)
+all<-subset(all, date > "2019-12-01")
 
 
 ################################
