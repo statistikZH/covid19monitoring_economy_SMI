@@ -76,7 +76,7 @@ all<-subset(all, date > "2019-12-31")
 
 
 ################################
-
+#uppercase
 # export result
 write.table(all, "Economy_SMI.csv", sep=",", fileEncoding="UTF-8", row.names = F)
 
