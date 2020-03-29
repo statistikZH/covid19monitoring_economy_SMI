@@ -72,7 +72,7 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
 all<-rbind(smi_index, chf_eur, chf_usd)
-all<-subset(all, date > "2019-12-01")
+all<-subset(all, date > "2019-12-31")
 
 
 ################################
