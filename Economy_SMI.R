@@ -78,6 +78,6 @@ all<-subset(all, date > "2019-12-31")
 ################################
 
 # export result
-write.table(all, "economy_SMI.csv", sep=",", fileEncoding="UTF-8", row.names = F)
+write.table(all, "Economy_SMI.csv", sep=",", fileEncoding="UTF-8", row.names = F)
 
 
