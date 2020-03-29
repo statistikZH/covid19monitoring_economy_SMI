@@ -1,4 +1,4 @@
-"date","value","topic","variable_short","variable_long","location","unit","origin","update","public","description"
+"date","value","topic","variable_short","variable_long","location","unit","source","update","public","description"
 2020-01-03,10699.82,"Wirtschaft","smi_index","Indexwert SMI","CH","Index-Punkte","yahoo finance","täglich","ja","https://github.com/statistikZH/covid19monitoring_economy_SMI"
 2020-01-06,10665.41,"Wirtschaft","smi_index","Indexwert SMI","CH","Index-Punkte","yahoo finance","täglich","ja","https://github.com/statistikZH/covid19monitoring_economy_SMI"
 2020-01-07,10683.67,"Wirtschaft","smi_index","Indexwert SMI","CH","Index-Punkte","yahoo finance","täglich","ja","https://github.com/statistikZH/covid19monitoring_economy_SMI"

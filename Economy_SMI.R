@@ -26,7 +26,7 @@ smi_index<-with(subset(pp, symbol=="^SSMI"), data.frame(
                 variable_long="Indexwert SMI",
                 location="CH",
                 unit="Index-Punkte", 
-                origin="yahoo finance",
+                source="yahoo finance",
                 update="täglich",
                 public="ja",
                 description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
@@ -39,7 +39,7 @@ smi_volume<-with(subset(pp, symbol=="^SSMI"), data.frame(
                 variable_long="Handelsvolumen SMI",
                 location="CH",
                 unit="Anzahl Transaktionen in Mio.",
-                origin="yahoo finance",
+                source="yahoo finance",
                 update="täglich",
                 public="ja",
                 description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
@@ -53,7 +53,7 @@ chf_eur<-with(subset(pp, symbol=="CHFEUR=X"), data.frame(
   variable_long="Wechselkurs Fr./Euro",
   location="CH",
   unit=NA,
-  origin="yahoo finance",
+  source="yahoo finance",
   update="täglich",
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
@@ -66,7 +66,7 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   variable_long="Wechselkurs Fr./US-Dollar",
   location="CH",
   unit=NA,
-  origin="yahoo finance",
+  source="yahoo finance",
   update="daily",
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
