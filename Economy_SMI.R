@@ -67,7 +67,7 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   location="CH",
   unit=NA,
   source="yahoo finance",
-  update="daily",
+  update="täglich",
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
