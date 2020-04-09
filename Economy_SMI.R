@@ -45,6 +45,8 @@ smi_volume<-with(subset(pp, symbol=="^SSMI"), data.frame(
                 description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
 
+smi_volume<-subset(smi_volume, value!=0)
+
 chf_eur<-with(subset(pp, symbol=="CHFEUR=X"), data.frame(
   date=as.POSIXct(paste(date, "00:00:00", sep=" ")), 
   value=round(close, 3),
@@ -71,7 +73,7 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
-all<-rbind(smi_index, chf_eur, chf_usd)
+all<-rbind(smi_index, chf_eur, chf_usd, smi_volume)
 all<-subset(all, date > "2019-12-31")
 
 
