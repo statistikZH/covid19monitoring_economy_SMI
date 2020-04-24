@@ -90,7 +90,7 @@ oil<-with(subset(pp, symbol=="CL=F"), data.frame(
 
 
 all<-rbind(smi_index, chf_eur, chf_usd, smi_volume, oil)
-all<-subset(all, date > "2019-12-31")
+all<-subset(all, date > "2019-12-31", is.na(value)==F)
 
 
 ################################
