@@ -13,7 +13,7 @@ library(reshape)
 
 # Download data
 # Download daily closing and volume SMI
-pp<-data.frame(tidyquant::tq_get(c("^SSMI", "CHFEUR=X", "CHFUSD=X"), get = "stock.prices"))
+pp<-data.frame(tidyquant::tq_get(c("^SSMI", "CHFEUR=X", "CHFUSD=X", "CL=F"), get = "stock.prices"))
 
 ################################
 
@@ -73,7 +73,23 @@ chf_usd<-with(subset(pp, symbol=="CHFUSD=X"), data.frame(
   public="ja",
   description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
 
-all<-rbind(smi_index, chf_eur, chf_usd, smi_volume)
+
+oil<-with(subset(pp, symbol=="CL=F"), data.frame(
+  date=as.POSIXct(paste(date, "00:00:00", sep=" ")), 
+  value=round(close,3),
+  topic="Wirtschaft", 
+  variable_short="oil_fut_ny",
+  variable_long="Ölpreis",
+  location="NY, US",
+  unit="USD",
+  source="yahoo finance",
+  update="täglich",
+  public="ja",
+  description="https://github.com/statistikZH/covid19monitoring_economy_SMI"))
+
+
+
+all<-rbind(smi_index, chf_eur, chf_usd, smi_volume, oil)
 all<-subset(all, date > "2019-12-31")
 
 
